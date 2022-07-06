@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/row_add_year"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_24"
+        android:layout_marginStart="@dimen/dimens_16"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_regular"
+        tools:text="@string/label_year"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/til_cash_flow"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_cash_flow"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16"
+        android:layout_marginTop="@dimen/dimens_8"
+        android:layout_marginEnd="@dimen/dimens_16"
+        app:boxCornerRadiusBottomEnd="@dimen/dimens_20"
+        app:boxCornerRadiusBottomStart="@dimen/dimens_20"
+        app:boxCornerRadiusTopEnd="@dimen/dimens_20"
+        app:boxCornerRadiusTopStart="@dimen/dimens_20"
+        app:layout_constraintEnd_toStartOf="@id/iv_cancel"
+        app:layout_constraintStart_toEndOf="@id/tv_year"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_cash_flow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/iv_cancel"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="@dimen/dimens_24"
+        android:layout_marginEnd="@dimen/dimens_16"
+        android:src="@drawable/ic_cancel"
+        app:layout_constraintStart_toEndOf="@id/til_cash_flow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/image_close" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

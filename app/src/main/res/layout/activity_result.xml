@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultActivity">
+
+    <Toolbar
+        android:id="@+id/tb_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_arrow"
+            android:contentDescription="@string/icon_back"
+            app:tint="#000000"/>
+
+        <TextView
+            android:id="@+id/tv_forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/result"/>
+
+    </Toolbar>
+
+    <TableLayout
+        android:id="@+id/table_heading_layout"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_result">
+
+        <TableRow
+            android:background="#3570D2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:textColor="@android:color/white"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_weight="4"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/year"/>
+
+            <TextView
+                android:layout_height="35dp"
+                android:layout_width="0dp"
+                android:textColor="@android:color/white"
+                android:text="@string/cash_flow"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_weight="4"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"/>
+        </TableRow>
+    </TableLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/table_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/table_heading_layout"
+        app:layout_constraintRight_toRightOf="@id/table_heading_layout"
+        app:layout_constraintTop_toBottomOf="@+id/table_heading_layout">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TableLayout
+        android:id="@+id/table_inv_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/table_recycler_view">
+
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="@dimen/dimens_24"
+                android:background="#3570D2"
+                android:textColor="@android:color/white"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_weight="4"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/label_investment"/>
+
+            <TextView
+                android:id="@+id/row_investment"
+                android:layout_height="35dp"
+                android:layout_width="0dp"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_weight="4"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                tools:text="@string/cash_flow" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="@dimen/dimens_24"
+                android:background="#3570D2"
+                android:textColor="@android:color/white"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_weight="4"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/label_interest_rate"/>
+
+            <TextView
+                android:id="@+id/row_interest_rate"
+                android:layout_height="35dp"
+                android:layout_width="0dp"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_weight="4"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                tools:text="@string/cash_flow" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/table_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/table_inv_rate">
+
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="@dimen/dimens_24"
+                android:background="#3570D2"
+                android:textColor="@android:color/white"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_weight="4"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/label_payback_period"/>
+
+            <TextView
+                android:id="@+id/row_payback_period"
+                android:layout_height="35dp"
+                android:layout_width="0dp"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_weight="4"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                tools:text="@string/cash_flow" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="@dimen/dimens_24"
+                android:background="#3570D2"
+                android:textColor="@android:color/white"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_weight="4"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/label_npv"/>
+
+            <TextView
+                android:id="@+id/row_npv"
+                android:layout_height="35dp"
+                android:layout_width="0dp"
+                android:padding="10sp"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="14sp"
+                android:layout_weight="4"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                tools:text="@string/cash_flow" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="@dimen/dimens_24"
+                android:background="#3570D2"
+                android:textColor="@android:color/white"
+                android:padding="10sp"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="14sp"
+                android:layout_weight="4"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/label_irr"/>
+
+            <TextView
+                android:id="@+id/row_irr"
+                android:layout_height="35dp"
+                android:layout_width="0dp"
+                android:padding="10sp"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="14sp"
+                android:layout_weight="4"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                tools:text="@string/cash_flow" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/tv_keterangan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_24"
+        android:layout_marginStart="@dimen/dimens_16"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/label_keterangan"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/table_result"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_ket_npv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_12"
+        android:layout_marginStart="@dimen/dimens_16"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_regular"
+        tools:text="@string/label_keterangan"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tv_keterangan"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_ket_irr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_8"
+        android:layout_marginStart="@dimen/dimens_16"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_regular"
+        tools:text="@string/label_keterangan"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tv_ket_npv"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
