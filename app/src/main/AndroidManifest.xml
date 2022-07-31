@@ -15,6 +15,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
+            android:name=".AllActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewIRRActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IRRActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NPVActivity"
+            android:exported="false" />
+        <activity
             android:name=".PaybackActivity"
             android:exported="false" />
         <activity

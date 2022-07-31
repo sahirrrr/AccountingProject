@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="button">#004EC0</color>
+
+    <color name="primary">#1F4690</color>
 </resources>

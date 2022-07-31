@@ -2,35 +2,34 @@ package com.msib.accountingproject
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import android.view.WindowInsetsController
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
-import com.msib.accountingproject.databinding.ActivityPaybackBinding
+import com.msib.accountingproject.databinding.ActivityAllBinding
 import com.msib.accountingproject.model.CashModel
 
-class PaybackActivity : AppCompatActivity(), View.OnClickListener {
+class AllActivity : AppCompatActivity(),  View.OnClickListener {
 
-    private var _binding: ActivityPaybackBinding? = null
+    private var _binding: ActivityAllBinding? = null
     private val binding get() = _binding
 
     private val arr = ArrayList<Int>()
     private val cashModel = CashModel()
+    var n = 1
 
-    private var n = 1
-
-    private var layoutList: LinearLayout? = null
+    var layoutList: LinearLayout? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = ActivityPaybackBinding.inflate(layoutInflater)
+        _binding = ActivityAllBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+
 
         // hide action bar
         supportActionBar?.hide()
@@ -41,7 +40,6 @@ class PaybackActivity : AppCompatActivity(), View.OnClickListener {
         binding?.btnSubmit?.setOnClickListener(this)
 
         addView()
-
     }
 
     override fun onClick(v: View) {
@@ -51,6 +49,7 @@ class PaybackActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btn_submit -> {
                 if (checkIfValidAndRead()) {
+                    Log.d("list_cash", cashModel.toString())
                     val intent = Intent(this, ResultActivity::class.java)
                     intent.putExtra("list_cash", cashModel)
                     startActivity(intent)
@@ -82,7 +81,10 @@ class PaybackActivity : AppCompatActivity(), View.OnClickListener {
         cashModel.cash = arr
         cashModel.period = cashModel.cash?.count()
         cashModel.investment = binding?.edtInvestment?.text.toString().toInt()
-        cashModel.PP = true
+        cashModel.interestRate = binding?.edtInterestRate?.text.toString().toFloat()
+        cashModel.firstRate = binding?.edtFirstRate?.text.toString().toFloat()
+        cashModel.SecondRate = binding?.edtSecondRate?.text.toString().toFloat()
+        cashModel.All = true
 
         return result
     }

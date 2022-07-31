@@ -1,8 +1,8 @@
 package com.msib.accountingproject.request
 
 data class RequestNPV(
-    var investment: Int,
-    var period: Int,
-    var cashflows : List<Int>,
-    var interestrate: Float
+    var investment: Int? = null,
+    var period: Int? = null,
+    var cashflows: ArrayList<Int>? = null,
+    var interestrate: Float? = null
 )

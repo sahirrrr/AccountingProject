@@ -24,7 +24,7 @@ class CountViewModel: ViewModel() {
 
     fun getNPV() : LiveData<NPVResponse> = NPVResult
 
-    fun setNPV(investment: Int, period: Int, cash: ArrayList<Int>, interestRate: Float) {
+    fun setNPV(investment: Int?, period: Int?, cash: ArrayList<Int>?, interestRate: Float?) {
         val request = RequestNPV(investment, period, cash, interestRate)
 
         val client = ApiConfig.getApiService().PostNPV(request)
@@ -44,7 +44,7 @@ class CountViewModel: ViewModel() {
 
     fun getPBP(): LiveData<PBPResponse> = PBPResult
 
-    fun setPBP(investment: Int, period: Int, cashflows: List<Int>) {
+    fun setPBP(investment: Int?, period: Int?, cashflows: List<Int>?) {
         val request = RequestPP(investment, period, cashflows as ArrayList<Int>)
         val client = ApiConfig.getApiService().PostPP(request)
 
@@ -64,11 +64,11 @@ class CountViewModel: ViewModel() {
     fun getIRR(): LiveData<IRRResponse> = IRRResult
 
     fun setIRR(
-        investment: Int,
-        cash: ArrayList<Int>,
-        baseline: Float,
-        firstRate: Float,
-        secondRate: Float
+        investment: Int?,
+        cash: ArrayList<Int>?,
+        baseline: Float?,
+        firstRate: Float?,
+        secondRate: Float?
     ) {
         val request = RequestIRR(investment, cash, baseline, firstRate, secondRate)
 

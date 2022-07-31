@@ -23,4 +23,20 @@
     <string name="image_close">close</string>
     <string name="label_keterangan">Keterangan :</string>
     <string name="icon_back">icon back</string>
+    <string name="label_cash_flow">Enter your cashflow</string>
+    <string name="hello">Hello Counter,</string>
+    <string name="ready_to_count">Are you ready to start counting ?</string>
+    <string name="label_service">Let\'s get started !</string>
+    <string name="icon_repeat">repat</string>
+    <string name="label_calculate_npv">Calculate NPV</string>
+    <string name="label_calculate_payback">Calculate Payback Period</string>
+    <string name="icon_money">money</string>
+    <string name="label_calculate_new_irr">Calculate IRR with RRR</string>
+    <string name="label_calculate_irr">Calculate IRR</string>
+    <string name="label_RRR">RRR</string>
+    <string name="label_discounto_1">Discounto 1</string>
+    <string name="label_discounto_2">Discounto 2</string>
+    <string name="gambar_dadakan">gambar dadakan</string>
+    <string name="result_cal">Result Calculation</string>
+    <string name="label_calculate_all">Calculate All</string>
 </resources>
